@@ -298,16 +298,10 @@ class SparkContext(object):
         return """
         <div>
             <p><b>SparkContext</b></p>
-
-            <p><a href="{sc.uiWebUrl}">Spark UI</a></p>
-
+            <p><Button onClick="console.log('call showSparkUI({sc.uiWebUrl}, {sc.applicationId}, EC2)');window.parent.showSparkUI('{sc.uiWebUrl}', '{sc.applicationId}', 'EC2')">Spark UI</Button></p>
             <dl>
               <dt>Version</dt>
                 <dd><code>v{sc.version}</code></dd>
-              <dt>Master</dt>
-                <dd><code>{sc.master}</code></dd>
-              <dt>AppName</dt>
-                <dd><code>{sc.appName}</code></dd>
             </dl>
         </div>
         """.format(
